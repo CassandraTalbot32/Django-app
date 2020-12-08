@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+<style>
+
+p{
+	color: #E6C20E;
+	font-family: 'impact';
+	font-size: 45px;
+	margin-left: 40px;
+
+}
+
+
+
+h1,h2,h3{
+	color: #E6C20E;
+	font-family: 'impact';
+	font-size: 40px;
+	margin-left: 40px;
+}
+</style>
+</head> 
+
+<style type="text/css" scoped>
+{
+color:#E6C20E;
+width:88%;
+height:600rem;
+border-width:5vmin;
+border-color:#778899;
+border-style:double;
+padding:1.5em;
+font-size:2em;
+line-height:1.3em;
+}
+
+
+.float-left {
+	float: left;
+}
+
+</style>
+
+{% block content %}
+{% include 'navbar.html' %}
+
+<h1>Contact info</h1>
+
+<h2>Email: cassandratalbot@yahoo.co.uk</h2>
+
+<h3>Mobile: (+44)7934767256
+<p>Alternatively, send me a message via this form! Lets collaborate!</p>
+
+<div></div>
+
+<iframe src="https://giphy.com/embed/4T3p7SAt2qGk59OQR4" width="480" height="200" frameBorder="9" class="giphy-embed" float="center";></iframe><p>
+
+        <p class="float-left"><b>First Name</b> (required) <span class="wpcf7-form-control-wrap their-first-name"><input type="text" name="their-first-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span></p>
+        <p class="float-left"><b>Surname</b> (required) <span class="wpcf7-form-control-wrap their-surname"><input type="text" name="their-surname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span></p>
+       <div id="right">
+        <p class="float-left"><b>Email</b> (required) <span class="wpcf7-form-control-wrap their-email"><input type="email" name="their-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false"></span>
+
+        </p>
+        <p class="float-left"><b>Phone Number</b> <span class="wpcf7-form-control-wrap their-phone-number"><input type="tel" name="their-phone-number" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false"></span></p>
+    </div>
+</div>
+<p class="float-left"><b>Subject</b> <span class="wpcf7-form-control-wrap their-subject"><input type="text" name="their-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"></span></p>
+<p class="float-left"><b>Your Message</b> <span class="wpcf7-form-control-wrap their-message"><textarea name="their-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span></p>
+<p><label><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></label></p>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
+			</div>
+
+
+{% include 'base.html' %}
+{% endblock %}
