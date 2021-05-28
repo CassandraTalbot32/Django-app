@@ -1,27 +1,55 @@
 <!DOCTYPE html>
 <head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<body>
 <style>
-h1,h2
-{	color: #F52F57;
-	font-size: 50px;
-	font-family:'impact';
+
+body{
+	 background: url("/static/starlinefreepik.jpg");
+     background-size: cover;
+     padding: 20;   
+     }
+
+
+h1, h2, h3, h4, h5, h6{	
+	color: #191970;
+	font-size: 35px;
+	font-family: 'Cinzel', serif;
 	float: center;
 	width: 90%;
 	height: 190%;
 	padding: 30px;
+	margin: margin;
 }
 
+img{
+	border-radius: 50%;
+	float: right;
+}
+
+
 </style>
-{% extends "base.html" %}
-
-{% block content %}
+</body>
+</head>
+{% load static %}
 {% include 'navbar.html' %}
-<h1>About Zhale and Zentaur designs</h1>
+{% block content %}
+<h1>The person behind Zhale and Zentaur designs</h1>
+<span><img src="{% static '/me2.jpg' %}" alt="My image" width='300' height='300' float='right'></span>
+<br>
+<h2>My name is Cassie aka Cassandra, I am based in Cheam, Surrey<br>
+I have a passion for every aspect of web development, which drives me to achieve perfection on every task.</h2>
+<h5>Why web development?<br>
+<br> I have enjoyed it since learning to code in 2016. I had started with some small tutorials. Since then I have gone on to do a foundation degree in I.T and Computing as well as completing a number of other courses in web development and design.<br>
+<br>But freelancing?<br>
+<h5>Yes!<br>
+	Freelancing because I love every aspect of building websites. It is also heartwarming to help other small businesses flourish without paying extortionate fees for their first website and/or maintenance on it.<br> 
+<br>I am available to work on projects now. Please get in touch if you would like more info on collaborating and setting up your online business.</h5>
+<h3>of course there are many other aspects to my life, <img src="{% static '/Chloe_Brandy.jpg' %}" alt="My image" width='350' height='450' float='right'><br> I have a 10 year old daughter called Chloe, who I love to spend quality time with.</h3><br>
+<br><h4><img src="{% static '/me_brandy.jpg' %}" alt="My image" width='400' height='400' float='right'>I am also an equestrian enthusiast, my loyal steed's name is Brandy, this is she... in all her majestic glory</h4>
+<br>
 
-<h2>Hello,
-I am a freelance web developer, based in Surrey. I am available to work on projects now. Please get in touch if you would like more info on collaborating and setting up your online business.</h2>
-
-
-
-
+<h6><a href="/quote">If you already know what you would like then please follow this link and fill out a quote form. This will be processed and you will receive a quote the next day</a></h6>
+{% include 'base.html' %}
 {% endblock %}
