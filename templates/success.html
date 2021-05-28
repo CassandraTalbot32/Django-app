@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<style>
+
+body{
+     background: url("/static/starlinefreepik.jpg");
+     background-size: cover;
+ }
+ h1{	
+	color: #191970;
+	font-family: 'Cinzel', serif;
+	text-align: center;
+	font-size: 65px;
+	width: 1020px;
+	height: 190%;
+	padding: 20px;
+	left: 50%;
+	}
+
+.container {
+  border-radius: 10px;
+  padding: 20px;
+  left: 50%;
+}
+
+</style>
+{% load static %}
+{% include 'navbar.html' %}
+{% block content %}
+<div class="container">
+	<div style="text-align:center">
+   <h1>Thank you for your enquiry! Please allow 24 hours for a reply</h1> 
+   <p>You will be consulted at each step of the design or re-design process. You will also be required to view the current layout of the website in stages: 
+1, 2, 3 & 4, if changes are needed at the current viewing stage they will not require addtional costs. However, if a change needs to be made to a previous step already authorised by the client, this will incur a £25 fee per change. For example a change to stage 2 at current stage 3 will be an addtional £25</p>
+  </div>
+  {% endblock %}
