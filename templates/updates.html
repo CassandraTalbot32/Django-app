@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<body>
+<style>
+
+body{
+	 background: url("/static/starlinefreepik.jpg");
+     background-size: cover;
+     padding: 20;   
+     }
+
+
+h1, h2, h3, h4, h5, h6{	
+	color: #191970;
+	font-size: 50px;
+	font-family: 'Cinzel', serif;
+	float: center;
+	width: 90%;
+	height: 190%;
+	padding: 30px;
+	margin: margin;
+}
+
+img{
+	border-radius: 50%;
+	float: none;
+}
+
+
+</style>
+</body>
+</head>
+{% load static %}
+{% include 'navbar.html' %}
+{% block content %}
+<h1>Check here for updates</h1>
+								<br><span><img src="{% static '/me2.jpg' %}" alt="My image" width='300' height='300' float='right'></span>
+<br><span>
+<br>
+</span>
+<h2>Website currently under construction!</h2>
+
+
+
+
+
+
+
+
+<h6><a href="/quote">If you already know what you would like then please follow this link and fill out a quote form. This will be processed in 3 hours and you will receive a quote the next day</a></h6>
+{% endblock %}
