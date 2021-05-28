@@ -1,64 +1,79 @@
 <!DOCTYPE html>
 <head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body 
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
 
-{
-  background-color: #2E4057;
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+body{
+	background-image: url("/static/starlinefreepik.jpg");
+	background-size: cover;
+
 }
 
 p,a{
-	color: #E6C20E;
-	font-family:'impact';
+	color: #191970;
+	font-family: 'Cinzel', serif;
 	text-align: left;
 	width: 80%;
 	height: 190%;
 	padding: 20px;
+	
 }
+
 h1{
-	font-family:'impact';
+	font-family: 'Cinzel', serif;
+	float: none;
 	text-align: center;
 	font-size: 65px;
-	color: #de5678;
+	color: #191970;
 	width: 1000px;
 	height: 190%;
 	padding: 20px;
-	border-width:5vmin;
-	border-color:#F6D8AE;
-	border-style:double;
+	
 }
 
 h2{
-	color: #d59f9f;
-	font-family:'impact';
-	font-size: 32
-	px;
+	color: #191970;
+	font-family: 'Cinzel', serif;
+	font-size: 50px;
 	text-align: center;
 }
 
 h3{
-	color: #E6C20E;
-	font-family:'impact';
+	color: #191970;
+	font-family: 'Cinzel', serif;
 	text-align: left;
-	font-size: 50px;
+	font-size: 32px;
 }
 
 h4{
-	color: #E6C20E;
-	font-family:'impact';
+	color: #191970;
+	font-family: 'Cinzel', serif;
 	text-align: center;
 	font-size: 40px;
 	
 }
 
 h5{
-	color: #E6C20E;
-	font-family:'impact';
+	color: #191970;
+	font-family: 'Cinzel', serif;
 	text-align: right;
 	font-size: 40px;
 }
 
-}
 .float-right {
 	float: right;
 	
@@ -68,63 +83,167 @@ h5{
 	float: left;
 }
 
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 8px 12px;
+  position: absolute;
+  top: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 15s;
+  animation-name: fade;
+  animation-duration: 15s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 1} 
+  to {opacity: 6}
+}
+
+@keyframes fade {
+  from {opacity: 1} 
+  to {opacity: 6}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 200px) {
+  .text {font-size: 11px}
+}
 </style>
 </head>
-
-{% block content %}
+<body>
 {% include 'navbar.html' %}
+{% block content %}
+{% load static %}
 <div>
+</div>
+<h1>Welcome to Zhale & Zentaur designs</h1>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="static/2754781.jpg" style="width:1000px" "height:200px">
+  <div class="text"><a href="/reasons">Thinking about getting a website? Click here to find out why you should</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="static/2729391.jpg" style="width:1000px" "height:200px">
+  <div class="text"><a href="/reasons">Thinking about getting a website? Click here to find out why you should</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="static/2665288.jpg" style="width:1000px" "height:200px">
+  <div class="text"><a href="/reasons">Thinking about getting a website? Click here to find out why you should</div>
+</div>
 
 </div>
-<h1>Welcome to Zhale & Zentaur designs...</h1>
+<br>
+
+<div style="text-align:none">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>
 <span>
 <br>
+<h2>Hello!<br>
+<br>I am a freelance web developer, based in Surrey.<br> I am available to work on projects now.<br> Please get in touch if you would like more info on collaborating or setting up your online business.</h2>
 
-</span>
-<iframe class="float-left" src="https://giphy.com/embed/OBuyIUMHO6yVq" width="480" height="350" frameBorder="10" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/gay-court-sniff-OBuyIUMHO6yVq"></a><h2 class="float-right">Here at Zhale and Zentaur designs we strive to acheive perfection when it comes to wix, wordpress or an independant website. <br> We specialise in website design but if you need photography, content writing or logo design, I do the work of finding these people and vetting them so that you dont have to.</h2>
-<div class="clear"></div>
-<span>
-<br>
-<br>
-</span>
-<h3>Mission:</h3>
+<h4><a href="/quote">If you know what your website needs and want to receive a quote asap, please click this link</a></h4>
 
-<iframe class="float-left" src="https://giphy.com/embed/KEhQUMUueH3xK" width="480" height="350" frameBorder="20" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/KEhQUMUueH3xK"></a></p><span><br></span><h4 class="float-right">To develop amazing, safe, secure websites at an affordable price!</h4>
-<span>
-<br>
-<br>
-<br>
-</span>
-<h5>So that you dont have to end up like this....</h5>
+<h3><a href="/contact">Curious about collaborating? I would love to hear from you, send me a message through my contact page</a></h3>
 <span>
 
-<br>
+<a href='https://www.freepik.com/photos/background'>Background photo created by creativeart - www.freepik.com</a>
 
-</span>
-<div style="float: right;">
-<iframe class="float-right" src="https://giphy.com/embed/bPCwGUF2sKjyE" width="480" height="357" frameBorder="20" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/computer-reddit-bPCwGUF2sKjyE"></a></div><span>
-
-<br>
-<br>
-<br>
-
-</span>
-<br>
-
-</br>
-<p class= "float-right" style="font-size:25px;"luminari;"><a href="/contact">Contact us using the form for a quote!</a>
-<span>
-<br>
-<br>
-</span>
-<p>You can use google to search for relative price enquiries for the job you want done</p>
-
-<form action="http://google.com">
-    <input type="submit" value="Go to Google" />
-</form>
-<br>
-
-
-</br>
+<div>
 {% include 'base.html' %}
+</div>
 {% endblock %}
