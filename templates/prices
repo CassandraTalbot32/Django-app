@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<body>
+<style>
+
+body{
+     background: url("/static/starlinefreepik.jpg");
+     background-size: cover;
+     padding: 20;   
+     }
+
+h1, h2{ 
+    color: #191970;
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+    float: center;
+    width: 90%;
+    height: 190%;
+    padding: 30px;
+    margin: margin;
+}
+
+table{
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Cinzel', serif;
+}
+
+img{
+    float: none;
+    border-radius: 50%;
+    
+}
+
+
+</style>
+{% load static %}
+{% include 'navbar.html' %}
+{% block content %}
+<h2>Pricing guideline</h2>
+<span>
+<br>
+<br>
+</span>
+
+<table border="1">
+  <tr>
+    <th>Standard Website</th>
+    <th>Timeframe</th> 
+    <th>Website (3 pages)</th>
+    <th>Addtional pages</th>
+    <th>Daily Updates</th>
+    <th>Weekly Updates</th>
+    <th>Monthly Updates</th>
+    <th>Maintenance Monthly</th>
+  </tr>
+  <tr>
+    <td>Personal</td>
+    <td>7 days(+/- 2 days)</td>
+    <td>£100</td>
+    <td>£20</td>
+    <td>£100 p/day</td>
+    <td>£85 pcm</td>
+    <td>£25 pcm</td>
+    <td>£45</td>
+  </tr>
+  <tr>
+    <td>Blog</td>
+    <td>7 days (+/- 2 days)</td>
+    <td>£200</td>
+    <td>£20</td>
+    <td>£100 p/day</td>
+    <td>£85 pcm</td>
+    <td>£25 pcm</td>
+    <td>£45</td>
+</tr>
+ <tr>
+    <td>Leaflet/Info</td>
+    <td>14 days(+/- 2 days)</td>
+    <td>£150</td>
+    <td>£50</td>
+    <td>£100 p/day</td>
+    <td>£85 pcm</td>
+    <td>£45 pcm</td>
+    <td>£45</td>
+  </tr>
+  <tr>
+    <td>eCommerce</td>
+    <td>14 days(+/- 2 days)</td>
+    <td>£500</td>
+    <td>£60</td>
+    <td>£125 p/day</td>
+    <td>£100 pcm</td>
+    <td>£55 pcm</td>
+    <td>£85</td>
+  </tr>
+</table>
+<br>
+<table border="1">
+  <tr>
+    <th>Wix/Wordpress Website</th>
+    <th>Timeframe</th> 
+    <th>Website (3 pages)</th>
+    <th>Addtional pages</th>
+    <th>Daily Updates</th>
+    <th>Weekly Updates</th>
+    <th>Monthly Updates</th>
+    <th>Maintenance Monthly</th>
+  </tr>
+  <tr>
+    <td>Personal</td>
+    <td>7 days(+/- 2 days)</td>
+    <td>£75</td>
+    <td>£10</td>
+    <td>£55 p/day</td>
+    <td>£20 pcm</td>
+    <td>£25 pcm</td>
+    <td>£25</td>
+  </tr>
+  <tr>
+    <td>Blog</td>
+    <td>7 days (+/- 2 days)</td>
+    <td>£150</td>
+    <td>£10</td>
+    <td>£55 p/day</td>
+    <td>£45 pcm</td>
+    <td>£20 pcm</td>
+    <td>£45</td>
+</tr>
+ <tr>
+    <td>Leaflet/Info</td>
+    <td>14 days(+/- 2 days)</td>
+    <td>£300</td>
+    <td>£30</td>
+    <td>£55 p/day</td>
+    <td>£45 pcm</td>
+    <td>£25 pcm</td>
+    <td>£35</td>
+  </tr>
+  <tr>
+    <td>eCommerce</td>
+    <td>14 days(+/- 2 days)</td>
+    <td>£600</td>
+    <td>£50</td>
+    <td>£55 p/day</td>
+    <td>£45 pcm</td>
+    <td>£25 pcm</td>
+    <td>£40</td>
+  </tr>
+</table>
+
+
+</body>
+</html>
+
+
+{% endblock %}
