@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 <style>
 ul {
   list-style-type: none;
@@ -10,30 +13,47 @@ ul {
 }
 
 li {
-  float: right;
+  float: left;
+  list-style:none;
 }
 
-li a {
+li a{
   display: block;
-  font-family:'impact';
+  font-family: 'Cinzel', serif; 
   font-size: 25px;
-  float: center;
+  float: left;
   padding: 8px;
-  color: #fee8b5;
-  background-color: #2E4057;
+  color: #151442
+  border-image: url("/static/border_image.jpg") 10% round;
+  list-style:none;
+  
 }
+
+.header, p{
+  float: right;
+  font-size: 25px;
+  font-family: 'Cinzel', serif;
+}
+
+
 </style>
 </head>
 <body>
 <html>
 <body>
+<div class="header">
+  <p>Call me: 07834767256</p>
+</div>
 <ul>
-  <li><a href= "/contact">Contact</a></li>
-  <li><a href= "/events">Prices</a></li>
-  <li><a href= "/projects">Projects</a></li>
-  <li><a href= "/search">Search</a></li>
-  <li><a href= "/about">About</a></li>
   <li><a href= "/">Home</a></li>
+  <li><a href= "/contact">Contact</a></li>
+  <li><a href= "/prices">Prices</a></li>
+  <li><a href= "/projects">Projects</a></li>
+  <li><a href= "/directory">Directory</a></li>
+  <li><a href= "/about">About</a></li>
+  <li><a href= "/quote">Quote</a></li>
+  <li><a href= "/updates">Updates</a></li>
+
 </ul>
 </body>
 </html>
