@@ -1,34 +1,89 @@
 <!DOCTYPE html>
 <head>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {
-  background-color: #2E4057
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 90px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 100%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+  }
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
 }
 
 .footer{
   padding: 10px;
-  display: block;
-  font-family:'impact';
-  font-size: 15px;
-  float: left;
+  display: inline;
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+  left: 1000px;
   color: #fee8b5;
   
 }
-  }
+.social{
+  padding: 10px;
+  display: inline;
+  float: right;
+}
 
 </style>
 </head>
 <html>
 {% block content %}
 
-<div class="footer">
-  <ul><a href= "/contact">Contact</a></ul>
-  <ul><a href= "/">Home</a></ul>
-  <ul><a href= "/about">About</a></ul>
-  <ul><a href= "/help">Help</a></ul>
-  <ul><a href= "/Ts&Cs">T&CS</a></ul>
-  <ul><a href= "/Privacy policy">Privacy Policy</a></ul>
+<div class="header">
+  <p>Contact: 07834767256</p>
+
+<div class="social">
+<a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-linkedin"></a>
+  <a href="#" class="fa fa-instagram"></a>
 </div>
+
+<div class="footer">
+  <li><a href= "/contact">Contact</a></li>
+  <li><a href= "/">Home</a></li>
+  <li><a href= "/about">About</a></li>
+  <li><a href= "/help">Help</a></li>
+  <li><a href= "/ts&Cs">T&CS</a></li>
+  <li><a href= "/collaborate">Collaborate</a></li>
+  <li><a href= "/privacy policy">Privacy Policy</a></li>
+</div>
+<br>
 
 
 
