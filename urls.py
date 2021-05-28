@@ -1,21 +1,27 @@
-from django.urls import path
-from products.views import ( 
-product_detail_view, 
-product_create_view, 
-product_list_view, 
-dynamic_lookup_view, 
-product_delete_view, 
-product_update_view,
-)
+from django.contrib import admin
+from django.urls import include, path
+from .views import home_view, contact_view, about_view, projects_view, directory_view, prices_view, quoteView, successView, updates_View, reasons_View
+from django.conf import settings
+from django.urls import re_path
+from django.views.static import serve
 
-app_name = 'products'
+# ... the rest of your URLconf goes here ...
+
+
+
 urlpatterns = [
-	path('<int:id>/', product_detail_view, name='product-detail'),
-    path('create/', product_create_view, name='product-list'),
-    path('<int:id>/delete/', product_delete_view, name='product-delete'), 
-    path('', product_list_view, name='product-list'),
-    path('<int:id>/', dynamic_lookup_view, name='product-detail'),
-    path('<int:id>/update/', product_update_view, name='product-update'),
-]
-
-
+	path('blog/', include('blog.urls')),
+	path('challenges/', include('challenges.urls')),
+	path('products/', include('products.urls')),
+	path('admin/', admin.site.urls),
+   	path('', home_view, name='home'),
+	path('contact/', contact_view),
+	path('projects/', projects_view),
+	path('directory/', directory_view),
+	path('prices/', prices_view),
+	path('about/', about_view),
+	path('quote/', quoteView, name='contact'),
+    path('success/', successView, name='success'),
+    path('updates/', updates_View), 
+    path('reasons/', reasons_View),
+	]
