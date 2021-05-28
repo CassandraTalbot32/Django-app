@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 <style>
-
-p{
-	color: #E6C20E;
-	font-family: 'impact';
-	font-size: 45px;
-	margin-left: 40px;
-
-}
+ 
+body{
+     background: url("/static/starlinefreepik.jpg");
+     background-size: cover;
+     padding: 20;   
+     }
 
 
-
-h1,h2,h3{
-	color: #E6C20E;
-	font-family: 'impact';
+h1,h2,h3,h4{
+	color: #191970;
+	font-family: 'Cinzel', serif;
 	font-size: 40px;
 	margin-left: 40px;
 }
-</style>
+
+form{
+    color: #191970;
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+    float: left;
+    width: 1000px;
+    height: 200px;
+    
+    
+}
+
+
+button{
+    background-color: #298F85;
+    border-radius: 100px;
+    font-size: 24px;
+    padding: 100px;
+    float: right;
+}
+
+.float.left{
+    float: left;
+}
+
+.float.right
+
 </head> 
 
-<style type="text/css" scoped>
-{
-color:#E6C20E;
-width:88%;
-height:600rem;
-border-width:5vmin;
-border-color:#778899;
-border-style:double;
-padding:1.5em;
-font-size:2em;
-line-height:1.3em;
-}
 
 
-.float-left {
-	float: left;
-}
 
 </style>
+</head>
 
 {% block content %}
 {% include 'navbar.html' %}
@@ -49,27 +60,20 @@ line-height:1.3em;
 <h2>Email: cassandratalbot@yahoo.co.uk</h2>
 
 <h3>Mobile: (+44)7934767256
-<p>Alternatively, send me a message via this form! Lets collaborate!</p>
+<h4>Alternatively, send me a message via this form! Lets collaborate!</h4>
 
-<div></div>
+<br>
 
-<iframe src="https://giphy.com/embed/4T3p7SAt2qGk59OQR4" width="480" height="200" frameBorder="9" class="giphy-embed" float="center";></iframe><p>
-
-        <p class="float-left"><b>First Name</b> (required) <span class="wpcf7-form-control-wrap their-first-name"><input type="text" name="their-first-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span></p>
-        <p class="float-left"><b>Surname</b> (required) <span class="wpcf7-form-control-wrap their-surname"><input type="text" name="their-surname" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span></p>
-       <div id="right">
-        <p class="float-left"><b>Email</b> (required) <span class="wpcf7-form-control-wrap their-email"><input type="email" name="their-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false"></span>
-
-        </p>
-        <p class="float-left"><b>Phone Number</b> <span class="wpcf7-form-control-wrap their-phone-number"><input type="tel" name="their-phone-number" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false"></span></p>
-    </div>
-</div>
-<p class="float-left"><b>Subject</b> <span class="wpcf7-form-control-wrap their-subject"><input type="text" name="their-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"></span></p>
-<p class="float-left"><b>Your Message</b> <span class="wpcf7-form-control-wrap their-message"><textarea name="their-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span></p>
-<p><label><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></label></p>
-<div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
-			</div>
+<p><form method="post">
+  {% csrf_token %}
+  <table border="1"><button type="submit">Submit</button>
+    {{ form }}
+  </table>
+  <br>
+</form>
 
 
-{% include 'base.html' %}
+
+
+
 {% endblock %}
