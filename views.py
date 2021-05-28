@@ -1,95 +1,83 @@
-from django.shortcuts import render, get_object_or_404, redirect 
-from .models import Product
-from .forms import ProductForm
+from django.http import HttpResponse 
+from django.shortcuts import render
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 
 
-def product_create_view(request):
-    form = ProductForm(request.POST or None)
-    if form.is_valid():
-    	form.save()
-    	form = ProductForm()
-    context = {
-        'form': form
-    }
-    return render(request, "products/product_create.html", context)
+from .forms import QuoteForm
+from .forms import ContactForm
 
 
-def product_update_view(request, id=id):
-	obj = get_object_or_404(Product, id=id)
-	form = ProductForm(request.POST or None, instance=obj)
-	if form.is_valid():
-		form.save
-	context = {
-			"form": form
+
+def home_view(request, *args, **kwargs):
+	print(args, kwargs)
+	print(request.user)
+	return render(request, "home.html", {})
+
+def contact_view(request):
+    if request.method == 'GET':
+       form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject, message, 
+                	email, ['cassandratalbot@yahoo.co.uk'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('success')
+    return render(request, "contact.html", {'form': form})
+
+def successView(request):
+    return HttpResponse('Success! Thank you for your message.')
+
+def about_view(request, *args, **kwargs):
+	my_context = {
+		"title": "The work I do",
+		"this is true": True, 
+		"my_number": 123,
+		"my_list": [900, 4567, 1342, "Abc"],
+		"my_html": "<h1>hello world</h1>"
 	}
-	return render(request, "products/product_create.html", context)
+	return render(request, "about.html", my_context)
 
+def projects_view(request, *args, **kwargs):
+	return render(request, "projects.html", {})
 
-def product_list_view(request):
-	queryset = Product.objects.all() # list of objects
-	context ={
-		"object_list": queryset
-	}
-	return render(request, "products/product_list.html", context)
+def directory_view(request, *args, **kwargs):
+	return render(request, "directory.html", {})
 
+def prices_view(request, *args, **kwargs):
+	return render(request, "prices.html", {})
 
-def product_detail_view(request, id):
-    obj = get_object_or_404(Product, id=id)
-    context = {
-        'object': obj
-	}
-    return render(request, "products/product_detail.html", context)
-
-
-def product_delete_view(request, id):
-	obj = get_object_or_404(Product, id=id)
-	if request.method == "POST":
-		obj.delete() 
-		return redirect('../../')
-	context = {
-		"object": obj
-	}
-	return render(request, "products/product_delete.html", context)
-
-
-def dynamic_lookup_view(request, id):
-	obj = Product.objects.get(id=id)
-	if request.method == "POST":
-		obj = get_object_or_404(Product, id=id)
-	try:
-		obj = Product.objects.get(id=id)
-	except Product.DoesNotExist:
-		raise Http404 
-	context = {
-		"object": obj
-	}
-	return render(request, "products/product_detail.html", context)
+def quoteView(request):
+    if request.method == 'GET':
+        form = QuoteForm()
+    else:
+        form = QuoteForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            website = form.cleaned_data['website']
+            number = form.cleaned_data['number']
+            about = form.cleaned_data['about']
+            try:
+                send_mail(name, email, about, ['cassandratalbot@yahoo.co.uk'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('success')
+    return render(request, "quote/quote.html", {'form': form})
  
-#def render_initial_data(request):
- 	#initial_data = {
- 	#		'title':"azkhaban"
- 	#}
- 	#obj = Product.obj.get(id=1)
- 	#form = ProductForm(request.POST or None, initial=initial_data, instance=obj)
- 	#if form.is_valid():
- 	#	form.save()
- 	#context ={
- 	#		'form': form
- 	#}
- 	#return render(request, "products/product_create.html", context)
-#def product_create_view(request):
-	#my_form = RawProductForm()
-	#if request.method == "POST":
-		#my_form = RawProductForm(request.POST)
-		#if my_form.is_valid():
-			#print(my_form.cleaned_data)
-			#Product.objects.create(**my_form.cleaned_data)
-		#else:
-			#print(my_form.errors)
-	#if request.method == "POST":
-		#my_new_title = request.POST.get('title')
-		#print(my_new_title)
-	#context = {
-		#"form": my_form
-	#}
-	#return render(request, "products/product_create.html", context)   
+
+def successView(request):
+    return render(request, "success.html", {})
+
+def updates_View(request, *args, **kwargs):
+	return render(request, "updates.html", {})
+
+def reasons_View(request, *args, **kwargs):
+	return render(request, "reasons.html", {})
